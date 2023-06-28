@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "docker build -t your-image:e${BUILD_NUMBER} ."
+                sh "docker build -t your-image:f${BUILD_NUMBER} ."
             }
         }
         stage('Login to Docker Hub') {
@@ -16,9 +16,9 @@ pipeline {
         }
         stage('Push to Docker Hub') {
             steps {
-                sh "docker tag your-image:e${BUILD_NUMBER} piyushdhir121/your-image:e${BUILD_NUMBER}"
-                sh "dddocker push piyushdhir121/your-image:e${BUILD_NUMBER}"
-                echo "Pushed to Docker Hub. Check Docker Hub for the image with tag e${BUILD_NUMBER}."
+                sh "docker tag your-image:e${BUILD_NUMBER} piyushdhir121/your-image:f${BUILD_NUMBER}"
+                sh "dddocker push piyushdhir121/your-image:f${BUILD_NUMBER}"
+                echo "Pushed to Docker Hub. Check Docker Hub for the image with tag f${BUILD_NUMBER}."
             }
         }
     }
